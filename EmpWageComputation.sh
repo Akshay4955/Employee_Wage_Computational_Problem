@@ -2,6 +2,9 @@
 WAGE_PER_HOUR=20;
 IsPresent=1;
 IsPartTime=2;
+Monthly_Wage=0;
+for ((Day=1; Day<=20;Day++))
+do
 present=$((RANDOM%3))
 case $present in
 	$IsPresent)
@@ -15,4 +18,6 @@ case $present in
 	;;
 esac
 Daily_Wage=$(($Emp_Hour*$WAGE_PER_HOUR));
-echo "Employee Daily Wage is equal to : $Daily_Wage"
+Monthly_Wage=$(($Monthly_Wage+$Daily_Wage));
+done
+Echo "Monthly Wage of Employee is equal to $Monthly_Wage";
